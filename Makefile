@@ -10,6 +10,10 @@ up: ## run main container
 down: ## stop main container
 	docker compose down
 
+.PHONY: worker
+worker: ## run worker container
+	docker compose exec worker bash
+
 .PHONY: server
 server: ## run server container
 	docker compose exec server bash

@@ -1,7 +1,9 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.11-slim
 WORKDIR /app
 
-RUN pip install fastapi
+RUN pip install fastapi uvicorn celery redis flower pydantic
+
+COPY . .
 
 EXPOSE 8000
 
